@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 3</title>
+
+  <style>
+      .word-count-title{
+          color: deeppink;
+          font-family: 'Courier New', Courier, monospace;
+      }
+      .word-count{
+          color: crimson;
+          font-weight:bold;
+          font-family: 'Courier New', Courier, monospace;
+      }
+      .type-here{
+          font-family:monospace;
+      }
+      .body {
+        text-align: center;
+      }
+  </style>
+
+  <body class="body">
+    <br>
+    <h1 class="word-count-title">Word Counter</h1>
+    <p class="type-here">
+        Type in the textbox
+    </p>
+
+    <textarea id="word" oninput="countWords()" rows="10" cols="60"> </textarea>
+    
+    <br>
+    <br>
+
+    <p class="word-count">
+      Word Count:
+      <span id="show">0</span>
+    </p>
+
+    <script>
+      function countWords() {
+        
+        var words = document.getElementById("word").value;
+
+      
+        var count = 0;
+
+        
+        var split_words = words.split(" ");
+
+       
+        for (var i = 0; i < split_words.length; i++) {
+          if (split_words[i] != "") {
+            count++;
+          }
+        }
+
+     
+        document.getElementById("show").innerHTML = count;
+      }
+    </script>
+  </body>
+
+</head>
+<body>
+  
+</body>
+</html>
+
